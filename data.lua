@@ -2,14 +2,14 @@ data:extend({
 	{
 		type = "virtual-signal",
 		name = "no-path",
-		icon = "__TrainStatusIcons__/graphics/no-path.png",
+		icon = "__train-status-icons-updated__/graphics/no-path.png",
 		icon_size = 78,
 		subgroup = "other",
 	},
 	{
 		type = "animation",
 		name = "no-path-blinking",
-		filename = "__TrainStatusIcons__/graphics/no-path-blinking.png",
+		filename = "__train-status-icons-updated__/graphics/no-path-blinking.png",
 		size = 78, -- total 156w 78h
 		animation_speed = 0.01,
 		frame_count = 2,
@@ -18,7 +18,7 @@ data:extend({
 	--[[{
 		type = "fluid",
 		name = "no-path",
-		icon = "__TrainStatusIcons__/graphics/no-path.png",
+		icon = "__train-status-icons-updated__/graphics/no-path.png",
 		icon_size = 78,
 		icon_mipmaps = 0,
 		default_temperature = 15,
@@ -32,7 +32,7 @@ data:extend({
 	{
 		type = "sprite",
 		name = "destination-full",
-		filename = "__TrainStatusIcons__/graphics/destination-full.png",
+		filename = "__train-status-icons-updated__/graphics/destination-full.png",
 		size = 79,
 		scale = 0.4,
 	},

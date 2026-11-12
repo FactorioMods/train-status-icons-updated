@@ -1,3 +1,4 @@
+local migration_state = require("migration-state")
 --[[function is_table_empty(table)
 	for _, _ in pairs(table) do
 		return false
@@ -70,7 +71,7 @@ end
 
 function tick_update()
 	for _, player in pairs(game.connected_players) do
-		local trains = player.surface.get_trains()
+		local trains = game.train_manager.get_trains{surface=player.surface}
 		if not is_table_empty(trains) then
 			for _, train in pairs(trains) do
 				if train and train.locomotives then
@@ -87,16 +88,16 @@ function tick_update()
 						end
 						rendering.draw_animation({
 							animation = "no-path-blinking",
-							target = front_locomotive,
-							target_offset = { 0, -0.7 },
+							target = {entity=front_locomotive, offset={0,-0.7}},
+							
 							surface = player.surface,
 							time_to_live = 62,
 						})
 					elseif train.state == defines.train_state.destination_full then
 						rendering.draw_sprite({
 							sprite = "destination-full",
-							target = front_locomotive,
-							target_offset = { 0, -0.7 },
+							target = {entity=front_locomotive, offset={0,-0.7}},
+							
 							surface = player.surface,
 							time_to_live = 62,
 							only_in_alt_mode = settings.get_player_settings(player)["destination-full-behind-alt"].value,
@@ -109,7 +110,7 @@ function tick_update()
 
 	--[[for _, surface in pairs(game.surfaces) do
 		local trains = surface.get_trains()
-		game.print(game.table_to_json(trains))
+		game.print(helpers.table_to_json(trains))
 		if trains then
 			for _, train in pairs(trains) do
 				if train and trains.locomotives then
@@ -162,3 +163,6 @@ script.on_nth_tick(60, tick_update)
 		end
 	end
 end)]]
+
+script.on_init(function() migration_state.adopt() end)
+script.on_configuration_changed(function() migration_state.adopt() end)

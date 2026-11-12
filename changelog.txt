@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.2
+Date: 2026-11-12
+  Changes:
+    - Update train-manager queries, rendering targets and serialization APIs while preserving train-status behavior.
+    - Add native ownership migration from the original mod identity while preserving existing saved state.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.1
   Tweaks:
     - Changed the animation of No path alert blinking to match the rest of the alerts.

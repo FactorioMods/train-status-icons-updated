@@ -1,10 +1,16 @@
 {
-  "name": "TrainStatusIcons",
-  "version": "0.1.1",
-  "title": "Train status icons",
-  "author": "captivator",
-  "factorio_version": "1.1",
+  "name": "train-status-icons-updated",
+  "version": "0.1.2",
+  "title": "Train status icons: Updated",
+  "author": "captivator; johnmart19 / FactorioMods (Factorio 2.1 compatibility)",
+  "factorio_version": "2.1",
   "homepage": "https://github.com/qaptivator/TrainStatusIcons",
-  "dependencies": ["base"],
-  "description": "Implements new alerts for train statuses mentioned in the Factorio Friday Facts #395. Trains will now alert if there's no path, instead of showing red text popup. And now there would be an icon over the train if destination is full, if alt mode is enabled."
+  "dependencies": [
+    "base >= 2.1.24",
+    "! TrainStatusIcons"
+  ],
+  "description": "Factorio 2.1 compatibility port with native legacy save ownership migration. Implements new alerts for train statuses mentioned in the Factorio Friday Facts #395. Trains will now alert if there's no path, instead of showing red text popup. And now there would be an icon over the train if destination is full, if alt mode is enabled.",
+  "migrates_from": [
+    "TrainStatusIcons"
+  ]
 }
